@@ -34,6 +34,10 @@
             this.tbPlayer2 = new System.Windows.Forms.TextBox();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPlay
@@ -87,11 +91,29 @@
             this.lblPlayer2.TabIndex = 5;
             this.lblPlayer2.Text = "Player2 points:";
             // 
+            // pb1
+            // 
+            this.pb1.Location = new System.Drawing.Point(203, 112);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(100, 153);
+            this.pb1.TabIndex = 6;
+            this.pb1.TabStop = false;
+            // 
+            // pb2
+            // 
+            this.pb2.Location = new System.Drawing.Point(486, 113);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(100, 152);
+            this.pb2.TabIndex = 7;
+            this.pb2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pb2);
+            this.Controls.Add(this.pb1);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.tbPlayer2);
@@ -100,6 +122,8 @@
             this.Controls.Add(this.btnPlay);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +137,7 @@
         private TextBox tbPlayer2;
         private Label lblPlayer1;
         private Label lblPlayer2;
+        private PictureBox pb1;
+        private PictureBox pb2;
     }
 }
