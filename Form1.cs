@@ -11,6 +11,8 @@ namespace SLVP_Week7_CardgameWar_Pictures
         public Form1()
         {
             InitializeComponent();
+            pb1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -37,16 +39,11 @@ namespace SLVP_Week7_CardgameWar_Pictures
             string p1CardString = CardImageFileName(g.Player1Card);
             string p2CardString = CardImageFileName(g.Player2Card);
 
-            string cardFolder = @"C:\Users\claus\source\repos\SLVP_Week7_CardgameWar_Pictures\Cards\";
-
-            Image p1Image = Image.FromFile(cardFolder + p1CardString);
-            Image p2Image = Image.FromFile(cardFolder + p2CardString);
+            Image? p1Image = Properties.Resources.ResourceManager.GetObject(p1CardString) as Image; // We know it exists since it's in the resources.
+            Image? p2Image = Properties.Resources.ResourceManager.GetObject(p2CardString) as Image; // We know it exists since it's in the resources.
 
             pb1.Image = p1Image;
             pb2.Image = p2Image;
-
-            pb1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pb2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             if (g.GameOver)
             {
@@ -69,31 +66,31 @@ namespace SLVP_Week7_CardgameWar_Pictures
             switch (card.Value)
             {
                 case CardValue.Two:
-                    valueCode = "2";
+                    valueCode = "_2";
                     break;
                 case CardValue.Three:
-                    valueCode = "3";
+                    valueCode = "_3";
                     break;
                 case CardValue.Four:
-                    valueCode = "4";
+                    valueCode = "_4";
                     break;
                 case CardValue.Five:
-                    valueCode = "5";
+                    valueCode = "_5";
                     break;
                 case CardValue.Six:
-                    valueCode = "6";
+                    valueCode = "_6";
                     break;
                 case CardValue.Seven:
-                    valueCode = "7";
+                    valueCode = "_7";
                     break;
                 case CardValue.Eight:
-                    valueCode = "8";
+                    valueCode = "_8";
                     break;
                 case CardValue.Nine:
-                    valueCode = "9";
+                    valueCode = "_9";
                     break;
                 case CardValue.Ten:
-                    valueCode = "10";
+                    valueCode = "_10";
                     break;
                 case CardValue.Jack:
                     valueCode = "J";
@@ -129,8 +126,7 @@ namespace SLVP_Week7_CardgameWar_Pictures
                 default:
                     throw new ArgumentException("Invalid card suit");
             }
-
-            return valueCode + suitCode + ".png";
+            return valueCode + suitCode;
         }
     }
 }
