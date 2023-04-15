@@ -29,7 +29,7 @@ namespace SLVP_Week7_CardgameWar_Pictures
         }
 
 
-        public void Update()
+        new public void Update()
         {
             rtbGame.Text = "Player 1 drew a " + g.Player1Card.Value.ToString() + " of " + g.Player1Card.Suit.ToString() + "\n";
             rtbGame.Text += "Player 2 drew a " + g.Player2Card.Value.ToString() + " of " + g.Player2Card.Suit.ToString() + "\n";
